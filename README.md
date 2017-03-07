@@ -13,6 +13,7 @@ How to set up my dev environment
 * Install iterm2
   * Set up keyboard shortcuts for moving between panes with vim keys
   * Just set the color scheme to solarized light in iterm2 preferences. don't download a vim color scheme
+  * Change the background color to something around #ddd6c0
 * Run 
 `git init` 
 to make a popup which installs apple developer tools (takes a while)
