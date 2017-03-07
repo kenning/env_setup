@@ -3,6 +3,7 @@ How to set up my dev environment
 
 * Install usb overdrive http://www.usboverdrive.com/USBOverdrive/Download.html
   * It requires a restart
+  * Change the mouse scrolling behavior to 3 lines up and 3 lines down
 * Install homebrew
 * Start installing node
 * Install smoothmouse
