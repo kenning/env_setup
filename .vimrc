@@ -63,7 +63,7 @@ set wildmenu
 
 " Color scheme
 set background=light
-colorscheme=pablo
+colorscheme pablo
 
 " 80 character line
 let &colorcolumn=81
