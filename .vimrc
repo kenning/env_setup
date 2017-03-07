@@ -63,7 +63,7 @@ set wildmenu
 
 " Color scheme
 set background=light
-colorscheme koehler
+colorscheme peachpuff
 
 " 80 character line
 let &colorcolumn=81
