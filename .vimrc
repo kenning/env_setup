@@ -69,3 +69,5 @@ colorscheme desert
 let &colorcolumn=81
 highlight ColorColumn ctermbg=103
 
+" :set paste automatically when pasting then :set nopaste
+inoremap <S-Insert> <ESC>:setl paste<CR>gi<C-R>+<ESC>:setl nopaste<CR>gi
