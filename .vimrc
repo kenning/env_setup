@@ -22,6 +22,7 @@ filetype off                  " required
 
     " youcompleteme
     " Plugin 'Valloric/YouCompleteMe'
+    " Try using ctrl + n instead, its pretty good
 
     " JSX syntax
     Plugin 'mxw/vim-jsx'
@@ -62,12 +63,15 @@ set wildmode=longest,list,full
 set wildmenu
 
 " Color scheme
-set background=light
-colorscheme desert
+" set background=light
+colorscheme desert 
 
 " 80 character line
 let &colorcolumn=81
 highlight ColorColumn ctermbg=103
 
 " :set paste automatically when pasting then :set nopaste
-inoremap <S-Insert> <ESC>:setl paste<CR>gi<C-R>+<ESC>:setl nopaste<CR>gi
+set pastetoggle=<F2>
+
+" :set dashes to count as part of a word for nicer jsx jumping
+set iskeyword+=-
