@@ -4,9 +4,9 @@ How to set up my dev environment
 * Install usb overdrive http://www.usboverdrive.com/USBOverdrive/Download.html
   * It requires a restart
   * Change the mouse scrolling behavior to 3 lines up and 3 lines down
+* Install smoothmouse or controllermate if on sierra or higher https://www.orderedbytes.com/controllermate/
 * Install homebrew
 * Start installing node
-* Install smoothmouse
 * Install karabiner 
   * I don't remember why i use this other than when using a windows keyboard for a mac
 * Install seil from the guys who brought you karabiner
