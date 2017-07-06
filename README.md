@@ -9,8 +9,9 @@ How to set up my dev environment
 * Start installing node
 * Install karabiner 
   * I don't remember why i use this other than when using a windows keyboard for a mac
-* Install seil from the guys who brought you karabiner
+* If pre-Sierra, install seil from the guys who brought you karabiner
   * Follow instructions in seil to remap caps to escape
+  * If on sierra, you can do this natively now in the keyboard section of system prefs
 * Install iterm2
   * Set up keyboard shortcuts for moving between panes with vim keys
   * Set option to meta. from https://www.iterm2.com/faq.html :
