@@ -6,7 +6,7 @@ How to set up my dev environment
   * Change the mouse scrolling behavior to 3 lines up and 3 lines down
 * Install smoothmouse or controllermate if on sierra or higher https://www.orderedbytes.com/controllermate/
 * Install homebrew
-* Start installing node
+* Start installing node 
 * Install karabiner 
   * I don't remember why i use this other than when using a windows keyboard for a mac
 * If pre-Sierra, install seil from the guys who brought you karabiner
@@ -23,6 +23,10 @@ How to set up my dev environment
     * optionally download another color scheme:
       https://github.com/mbadolato/iTerm2-Color-Schemes
   * Change the background color to something around #ddd6c0
+  * Install nerd fonts like this
+    * `cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf`
+    * in iterm2 preferences go to the 'text' tab and change the non-ascii font to Droid Sans Mono for Powerline... etc.
+    * `gem install colorls` 
 * Run `git init` to make a popup which installs apple developer tools (takes a while)
   * configure text editor: `git config --global core.editor /usr/bin/vim`
 * Install vundle https://github.com/VundleVim/Vundle.vim
