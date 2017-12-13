@@ -6,6 +6,8 @@ How to set up my dev environment
   * Change the mouse scrolling behavior to 3 lines up and 3 lines down
   * If on high sierra, usb overdrive will handle no acceleration; if on earlier, maybe try installing smoothmouse
     * Set mouse sensitivity to about 75% (5 ticks from the right)
+  * If on high sierra, you need to install cursorsense to turn off mousepad acceleration 
+    http://plentycom.jp/en/cursorsense/download.php
 * Install homebrew
 * Start installing node 
 * Install karabiner 
