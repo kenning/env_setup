@@ -7,7 +7,7 @@ How to set up my dev environment
   * If on high sierra, usb overdrive will handle no acceleration; if on earlier, maybe try installing smoothmouse
     * Set mouse sensitivity to about 75% (5 ticks from the right)
   * If on high sierra, you need to install cursorsense to turn off mousepad acceleration 
-    http://plentycom.jp/en/cursorsense/download.php
+    http://plentycom.jp/en/cursorsense/download.php i think the correct setting is 1955
 * Install homebrew
 * Start installing node 
 * Install karabiner 
