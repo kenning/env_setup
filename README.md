@@ -5,6 +5,7 @@ How to set up my dev environment
   * It requires a restart
   * Change the mouse scrolling behavior to 3 lines up and 3 lines down
   * If on high sierra, usb overdrive will handle no acceleration; if on earlier, maybe try installing smoothmouse
+    * Set mouse sensitivity to about 75% (5 ticks from the right)
 * Install homebrew
 * Start installing node 
 * Install karabiner 
