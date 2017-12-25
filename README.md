@@ -38,3 +38,7 @@ How to set up my dev environment
   * ctrl + n should autocomplete a lot of things anyway.
 * Generate ssh key and add to github https://help.github.com/articles/connecting-to-github-with-ssh/
 * Install spectacle
+* Install vscode
+  * Install C#, Debugger for Unity, Git Lens, Vim, Sort lines extensions as necessary
+  * In preferences -> workspace settings tab, you can change a specific directory's color scheme like:
+    `    "workbench.colorTheme": "Monokai Dimmed"`
