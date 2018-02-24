@@ -32,6 +32,7 @@ How to set up my dev environment
     * `gem install colorls` 
 * Run `git init` to make a popup which installs apple developer tools (takes a while)
   * configure text editor: `git config --global core.editor /usr/bin/vim`
+  * configure pushing/pulling style: `git config push.default current`
 * Install vundle https://github.com/VundleVim/Vundle.vim
 * Install bashmarks https://github.com/huyng/bashmarks
 * Install vim 7.4? Idk how to do this and i remember it being a huge pain, so youcompleteme is disabled right now
