@@ -43,3 +43,7 @@ How to set up my dev environment
   * Install C#, Debugger for Unity, Git Lens, Vim, Sort lines extensions as necessary
   * In preferences -> workspace settings tab, you can change a specific directory's color scheme like:
     `    "workbench.colorTheme": "Monokai Dimmed"`
+    
+* `brew install libuv` may have helped omnisharp work
+* open a .cs file to start omnisharp, run `:OmniSharpInstall 'v1.32.1'` because the latest version has problems with sierra
+* Manually install YouCompleteMe in its `~/.vim/bundle/` path, apply an extra argument to allow for C# completions
