@@ -47,3 +47,4 @@ How to set up my dev environment
 * `brew install libuv` may have helped omnisharp work
 * open a .cs file to start omnisharp, run `:OmniSharpInstall 'v1.32.1'` because the latest version has problems with sierra
 * Manually install YouCompleteMe in its `~/.vim/bundle/` path, apply an extra argument to allow for C# completions
+* make a file "omnisharp.json" at ~/.omnisharp/omnisharp.json 
