@@ -5,6 +5,7 @@
 
 ### Logging in as another user
 
+```
 $ whoami
 user1
 $ su - user2
@@ -13,6 +14,7 @@ $ whoami
 user2
 $ exit
 logout
+```
 
 ----------------
 ## Job specific stuff
