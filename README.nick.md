@@ -21,4 +21,4 @@ logout
 
 ### Ethos
 
-yarn workspace <workspace> add <package>
+`yarn workspace <workspace> add <package>`
