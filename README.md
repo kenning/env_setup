@@ -35,6 +35,5 @@ How to set up my dev environment
 * Generate ssh key and add to github https://help.github.com/articles/connecting-to-github-with-ssh/
 * Install spectacle
 * Install vscode
+* Run `sh update_dotfiles_locally.sh`
     
-# * Manually install YouCompleteMe in its `~/.vim/bundle/` path, apply an extra argument to allow for C# completions
-# * make a file "omnisharp.json" at ~/.omnisharp/omnisharp.json 
