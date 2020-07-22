@@ -1,0 +1,13 @@
+{
+  "window.zoomLevel": -1,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.rulers": [80, 100],
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Solarized Light",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

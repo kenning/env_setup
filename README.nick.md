@@ -91,6 +91,10 @@ ctrl+n
 - I've set up ctrl+shift+f to do a search in the 'current' directory
   (this is basically always the frontend repo, for ethos)
 
+### Commenting out lines
+
+I got a plugin for this, try `gcc`, or `gc` in visual mode
+
 ### Run shell inside vim
 
 :! <command>

@@ -8,6 +8,10 @@ filetype off                  " required
 
 set shell=/bin/zsh
 
+" Experimental: try to constantly shift the working directory
+set autochdir
+
+
 """"""""""""""""""""""""
 " Begin stupid plugins "
 """"""""""""""""""""""""
@@ -20,6 +24,16 @@ set shell=/bin/zsh
     " let Vundle manage Vundle, required
     Plugin 'VundleVim/Vundle.vim'
 
+    " Autoformatting and doing it on save
+    Plugin 'Chiel92/vim-autoformat'
+
+    " Airline
+    Plugin 'vim-airline/vim-airline'
+
+    " ctrl shift f
+    Plugin 'dyng/ctrlsf.vim'
+    nnoremap <C-F> :CtrlSF
+
     " ctrlp 
     Plugin 'kien/ctrlp.vim'
       " set ctrlp home directory to directory vim was opened in
@@ -31,17 +45,20 @@ set shell=/bin/zsh
     " Plugin 'Valloric/YouCompleteMe'
     " Try using ctrl + n instead, its pretty good
 
-    " JSX syntax
-    Plugin 'mxw/vim-jsx'
+    " nord colorscheme
+    Plugin 'arcticicestudio/nord-vim'
 
-    " Easy Motion: makes search (/, ?) more visual"
+    " Easy Motion: makes search (/, ?) more visual
     Plugin 'easymotion/vim-easymotion'
 
     " Commentary: just does comments with `gcc`
     Plugin 'tpope/vim-commentary'
 
-    " vim-smooth-scroll "
-    Plugin 'terryma/vim-smooth-scroll'
+    " vim-smooth-scroll 
+    Plugin 'cskeeters/vim-smooth-scroll'
+
+    " JSX syntax 
+    Plugin 'mxw/vim-jsx'
 
     " Syntastic "
     Plugin 'vim-syntastic/syntastic'
@@ -91,7 +108,7 @@ set wildmenu
 
 " Color scheme
 " set background=light
-" colorscheme industry
+colorscheme nord
 
 " 80 character line
 let &colorcolumn=81
@@ -102,4 +119,5 @@ set pastetoggle=<F2>
 
 " :set dashes to count as part of a word for nicer jsx jumping
 set iskeyword+=-
+
 
