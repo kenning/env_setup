@@ -12,8 +12,8 @@ then
 
     # Copy new versions
     cp README.nick.md ~/README.nick.md 
-    cp .zprofile ~/.zprofile 
-    cp .zshrc ~/.zshrc 
-    cp vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json 
-    cp init.vim ~/.config/nvim/init.vim 
+    cp dot/.zprofile ~/.zprofile 
+    cp dot/.zshrc ~/.zshrc 
+    cp dot/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json 
+    cp dot/init.vim ~/.config/nvim/init.vim 
 fi

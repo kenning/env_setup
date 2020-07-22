@@ -1,6 +1,7 @@
 #!/bin/bash
 cp ~/README.nick.md README.nick.md
-cp ~/.zprofile .zprofile
-cp ~/.zshrc .zshrc
-cp ~/Library/Application\ Support/Code/User/settings.json vscode-settings.json
-cp ~/.config/nvim/init.vim init.vim
+cp ~/.gitignore_global dot/gitignore_global
+cp ~/.zprofile dot/.zprofile
+cp ~/.zshrc dot/.zshrc
+cp ~/Library/Application\ Support/Code/User/settings.json dot/vscode-settings.json
+cp ~/.config/nvim/init.vim dot/init.vim
