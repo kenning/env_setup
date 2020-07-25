@@ -48,3 +48,12 @@ How to set up my dev environment
 * open a .cs file to start omnisharp, run `:OmniSharpInstall 'v1.32.1'` because the latest version has problems with sierra
 * Manually install YouCompleteMe in its `~/.vim/bundle/` path, apply an extra argument to allow for C# completions
 * make a file "omnisharp.json" at ~/.omnisharp/omnisharp.json 
+
+## New things for 2020
+
+The dorky laser pointer trackball mouse needs:
+  1. Add a new keyboard device in usb overdrive, overwrite the 'return' key 
+     (currently ctrl+up for look at all windows)
+  2. Go to system preferences mouse settings and switch left and right click
+     (or don't) (there's nothing more to do with the stupid thing because
+     it's considered a keyboard and usb overdrive can't figure it out)
