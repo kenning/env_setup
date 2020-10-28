@@ -39,12 +39,21 @@ How to set up my dev environment
     
 ## New things for 2020
 
-The dorky laser pointer trackball mouse needs:
+#### The dorky laser pointer trackball mouse needs:
   1. Add a new keyboard device in usb overdrive, overwrite the 'return' key 
      (currently ctrl+up for look at all windows)
   2. Go to system preferences mouse settings and switch left and right click
      (or don't) (there's nothing more to do with the stupid thing because
      it's considered a keyboard and usb overdrive can't figure it out)
+
+#### Chrome settings
+
+1. Go to [chrome://flags/#omnibox-context-menu-show-full-urls]
+2. Set to enabled
+3. Right click the address bar and select "always show full urls"
+  1. Sigh
+4. Cmd+f around in [chrome://flags] for other "omnibox" settings to turn
+  off bullshit
 
 ## Old stuff
 
