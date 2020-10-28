@@ -48,11 +48,11 @@ How to set up my dev environment
 
 #### Chrome settings
 
-1. Go to [chrome://flags/#omnibox-context-menu-show-full-urls](chrome://flags/#omnibox-context-menu-show-full-urls)
+1. Go to chrome://flags/#omnibox-context-menu-show-full-urls
 2. Set to enabled
 3. Right click the address bar and select "always show full urls"
     1. Sigh
-4. Cmd+f around in [chrome://flags](chrome://flags) for other "omnibox" settings to turn
+4. Cmd+f around in chrome://flags for other "omnibox" settings to turn
     off bullshit
 
 ## Old stuff
