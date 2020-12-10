@@ -51,7 +51,12 @@ sudo apt install build-essential
 # Install yarn
 npm i -g yarn
 
-# Bunch of outerlabs stuff
+# vscode
+cp ubuntu/vscode-settings.json ~/.config/Code/User/settings.json
+
+#####
+## Bunch of outerlabs stuff
+#####
 git config --global user.email "hwerzog@gmail.com"
 git config --global user.name "Nick Thinkpad X1"
 git config --global core.editor vim
