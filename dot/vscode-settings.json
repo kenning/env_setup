@@ -1,5 +1,6 @@
 {
   "window.zoomLevel": -1,
+      "keyboard.dispatch": "keyCode",
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
   "editor.rulers": [80, 100],

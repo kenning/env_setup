@@ -8,6 +8,23 @@ Just for zsh settings and overriding one zsh git plugin command
 
 --------------------------------------------------------------------------------
 
+## UBUNTU stuff i always forget
+
+**Guide to filesystem structure**
+https://www.pathname.com/fhs/pub/fhs-2.3.pdf
+
+`gio open .`
+opens things in file browser
+
+`git status > xsel -b`
+copy output to the clipboard
+
+`gc -a > out.txt 2>error.txt`
+copy ERROR message, if it exists, to the clipboard.
+from outerlabs lefthook preventing me from committing :(
+
+--------------------------------------------------------------------------------
+
 ## Unix stuff i always forget: Logging in as another user
 
 `whoami`

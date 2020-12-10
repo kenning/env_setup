@@ -1,0 +1,27 @@
+{
+    "editor.selectionClipboard": false,
+    "eslint.validate": ["typescript", "typescriptreact"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.rulers": [
+        80,
+        100
+    ],
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Monokai",
+    "window.zoomLevel": -2,
+    "keyboard.dispatch": "keyCode",
+    "eslint.workingDirectories": [
+        { 
+            "directory": "web", 
+            "changeProcessCWD": true
+        }
+    ],
+    "eslint.packageManager": "yarn",
+    "eslint.run": "onSave",
+}
