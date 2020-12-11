@@ -103,4 +103,13 @@ sudo apt install default-jre
 # set gcloud project
 gcloud config set project onewbs-staging
 
+# uninstall lefthook
+rm $(which lefthook)
+
+# dl from https://github.com/Arkweid/lefthook/releases/tag/v0.7.2
+# Rename and move the file so it's in your PATH:
+mv ./lefthook_0.7.2_Linux_x86_64 /usr/local/bin/lefthook
+sudo chmod 777 /usr/local/bin/lefthook
+
+
 
