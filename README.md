@@ -9,7 +9,10 @@ https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows
 
 https://www.bleepingcomputer.com/download/keytweak/
 
-## mac stuff - probably useless now.
+## mac stuff 
+
+probably useless now, so i hid it, but can be uncommented. won't show up on github.
+
 <!-- 
 * Install usb overdrive http://www.usboverdrive.com/USBOverdrive/Download.html
   * It requires a restart
