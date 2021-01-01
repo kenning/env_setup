@@ -1,6 +1,16 @@
 # env_setup
 How to set up my dev environment
 
+## windows
+
+to map caps lock to escape install keytweak or some other thing
+
+https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows
+
+https://www.bleepingcomputer.com/download/keytweak/
+
+## mac stuff - probably useless now.
+<!-- 
 * Install usb overdrive http://www.usboverdrive.com/USBOverdrive/Download.html
   * It requires a restart
   * Change the mouse scrolling behavior to 3 lines up and 3 lines down
@@ -61,4 +71,4 @@ How to set up my dev environment
 * open a .cs file to start omnisharp, run `:OmniSharpInstall 'v1.32.1'` because the latest version has problems with sierra
 * Manually install YouCompleteMe in its `~/.vim/bundle/` path, apply an extra argument to allow for C# completions
 * make a file "omnisharp.json" at ~/.omnisharp/omnisharp.json 
-
+ -->
