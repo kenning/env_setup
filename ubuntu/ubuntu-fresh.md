@@ -113,3 +113,6 @@ sudo chmod 777 /usr/local/bin/lefthook
 
 
 
+# maybe download powerline fonts from https://github.com/powerline/fonts and
+# then run ./install.sh
+# maybe install 256color zsh?
