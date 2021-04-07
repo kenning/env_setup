@@ -111,7 +111,8 @@ rm $(which lefthook)
 mv ./lefthook_0.7.2_Linux_x86_64 /usr/local/bin/lefthook
 sudo chmod 777 /usr/local/bin/lefthook
 
-
+# INSANE workaround for two keyboards at once
+https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/1858#note_818548
 
 # maybe download powerline fonts from https://github.com/powerline/fonts and
 # then run ./install.sh

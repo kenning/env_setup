@@ -23,6 +23,14 @@ copy output to the clipboard
 copy ERROR message, if it exists, to the clipboard.
 from outerlabs lefthook preventing me from committing :(
 
+`find $DIR -type f \( -name "*.wav" -o -name "*.aac" -o -name "*.m4a" -o -name "*.mov" -o -name "*.wmv" \) -exec ffmpeg -i '{}' -vn -ar 44100 -ac 2 -b:a 192k '{}.mp3' \;`
+Run ffmpeg on multiple files. I dont understand this but it worked at least
+
+`sudo -u postgres psql`
+On ubuntu postgres is its own linux user; this makes it pretty different and
+you should probably just google around.
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04
+
 --------------------------------------------------------------------------------
 
 ## Unix stuff i always forget: Logging in as another user
