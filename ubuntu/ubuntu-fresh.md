@@ -112,7 +112,27 @@ mv ./lefthook_0.7.2_Linux_x86_64 /usr/local/bin/lefthook
 sudo chmod 777 /usr/local/bin/lefthook
 
 # INSANE workaround for two keyboards at once
-https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/1858#note_818548
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/1858#note_818548
+cd ~
+mkdir mutter
+cd mutter
+# in 'software & updates' (not software updates lol) check the box in the
+# first tab to allow for downloading ubuntu source code
+apt-get source mutter
+sudo apt-get build-dep mutter
+apt-get source mutter
+sudo apt-get build-dep mutter
+cd mutter-3.36.7+git20201123
+vim ./src/backends/x11/meta-backend-x11.c
+dpkg-buildpackage -rfakeroot -uc -b
+..
+sudo dpkg -i libmutter-6-0_3.36.7+git20201123-0.20.04.1_amd64.deb
+apt-get source mutter-common
+sudo apt-get upgrade mutter-common
+apt --fix-broken install
+sudo apt --fix-broken install
+sudo dpkg -i libmutter-6-0_3.36.7+git20201123-0.20.04.1_amd64.deb
+sudo apt-mark hold libmutter-6-0:amd64
 
 # maybe download powerline fonts from https://github.com/powerline/fonts and
 # then run ./install.sh
