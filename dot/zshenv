@@ -1,0 +1,160 @@
+START_WITH_TMUX=true
+
+# Aliases at the end of .zshrc instead of here:
+# alias gb="git branch | cat"
+
+# ---------------------------------------------------------------------
+# Secret stuff not for env_setup repo
+
+source ~/.secret
+
+# ---------------------------------------------------------------------
+# My shortcuts
+
+## Source this once done editing 
+
+alias zsrc="source ~/.zshenv"
+
+## Readme's
+alias tt="less ~/README.nick.md"
+alias githelp="less ~/.oh-my-zsh/plugins/git/README.md"
+
+## Funny 
+alias please="sudo"
+alias pls="sudo"
+
+## Zsh git plugin style command
+alias gcpp="git checkout preproduction"
+
+## Copy to clipboard
+alias copy="xsel -b"
+
+# ---------------------------------------------------------------------
+# Handmade bashmarks
+
+## Collective
+export cwwd="$HOME/Documents/card-editor"
+export clwd="$HOME/Documents/library/website"
+export cawd="$HOME/Documents/alecco/aurocracy/"
+export cewd="$HOME/Documents/alecco/event-creator/"
+export ccwd="$HOME/Documents/alecco/card-editor/"
+
+## Personal
+export ptwd="$HOME/Documents/test-space"
+export pewd="$HOME/Documents/env_setup"
+
+## Outerlabs
+export o1wd="$HOME/Documents/ol/onewbs"
+export ocwd="$HOME/Documents/ol/compass"
+export opwd="$HOME/Documents/ol/panorama"
+export onwd="$HOME/Documents/ol/notes"
+
+## Matt app
+export mawd="$HOME/Documents/mattapp"
+
+## Implement shortcuts
+alias ccw="cd $cwwd"
+alias ccl="cd $clwd"
+alias cca="cd $cawd"
+alias cce="cd $cewd"
+alias ccc="cd $ccwd"
+alias cpt="cd $ptwd"
+alias cpe="cd $pewd"
+alias co1="cd $o1wd"
+alias coc="cd $ocwd"
+alias cop="cd $opwd"
+alias con="cd $onwd"
+alias cma="cd $mawd"
+
+# ---------------------------------------------------------------------
+# Work
+
+## Outerlabs
+
+export ONEWBS_WORKING_DIR="$HOME/Documents/ol/onewbs"
+
+alias onewbs="tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-database-emulator\" && tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-api\" && tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-frontend\" && tmux rotate-window && tmux select-layout even-vertical && clear"
+
+alias kill-java="killall -9 java"
+
+PANORAMA_PORT=5331
+export API_HOST="http://localhost:$PANORAMA_PORT"
+
+alias pg="sudo runuser -u postgres -- psql panorama"
+alias pglogin="sudo su - postgres"
+
+alias findpanorama="netstat -ltnp | grep -w \":$PANORAMA_PORT\""
+
+# ---------------------------------------------------------------------
+# Shit copy and pasted off the internet that i don't really understand
+
+## Android simulator
+
+export ANDROID_SDK=~/Library/Android/sdk
+# export PATH=~/Library/Android/sdk/platform-tools:$PATH:/usr/local/mysql/bin/
+
+## Nvim
+
+alias vi="nvim" 
+alias vim="nvim" 
+alias vimedit="vim ~/.config/nvim/init.vim"
+
+### vim 10ms delay on escape key
+KEYTIMEOUT=1
+
+## Zsh
+
+### Vim text editing mode
+bindkey -v
+
+### Show visual indication when in normal mode
+
+function zle-line-init zle-keymap-select {
+VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+### Reduce 0.4s lag when you hit escape key
+export KEYTIMEOUT=1
+
+## Nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$PATH:/usr/local/bin"
+export PATH="$PATH:/usr/local/opt/python/libexec/bin"
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/home/nick/go/bin"
+export PATH="$PATH:/home/nick/Documents/ol/compass/bin"
+export PATH="$PATH:/home/nick/Documents/ol/panorama/bin"
+export PATH="$PATH:$(yarn global bin)"
+
+## Python shit, very sus
+
+export CLOUDSDK_PYTHON=$(which python)
+
+### The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/nick/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nick/Documents/google-cloud-sdk/path.zsh.inc'; fi
+
+### The next line enables shell command completion for gcloud.
+if [ -f '/home/nick/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nick/Documents/google-cloud-sdk/completion.zsh.inc'; fi
+
+## Run tmux
+if $START_WITH_TMUX; then
+  if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+    exec tmux
+  fi
+fi
+
+# On new window, open in panorama folder
+cop
+
+# Linux-y todos
+echo "\n\033[;34m  TODO:\n\
+  - ctrl+a then ? to get some ideas about tmux commands like rename-window\
+\033[0m"
+
