@@ -138,10 +138,13 @@ sudo apt --fix-broken install
 sudo dpkg -i libmutter-6-0_3.36.7+git20201123-0.20.04.1_amd64.deb
 sudo apt-mark hold libmutter-6-0:amd64
 
-# maybe download powerline fonts from https://github.com/powerline/fonts and
-# then run ./install.sh
-# maybe install 256color zsh?
+# Install gnome-tweaks via snap store, then...
+# Install 'starter pack' extensions
+sudo apt install gnome-shell-extensions
 
-## To install gtile you basically have to use firefox, chrome doesn't work
-## https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome/Installation
+# Install gTile
+cpe
+gnome-extensions pack gTile@me
+gnome-extensions install gTile@me.shell-extension.zip
+# alt+f2 to bring up window, then type "r"
 
