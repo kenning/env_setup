@@ -25,6 +25,13 @@
   "emmet.showExpandedAbbreviation": "never",
   "editor.suggest.showSnippets": false,
   "vim.cursorStylePerMode.insert": "line",
+  "vim.handleKeys": {
+    "<C-d>": false,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-w>": false
+  },
   "vim.cursorStylePerMode.replace": "block-outline",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -37,5 +44,14 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "window.autoDetectHighContrast": false,
-  "window.zoomLevel": -1
+  "go.lintOnSave": "file",
+  "go.formatTool": "gofmt",
+  "go.useLanguageServer": true,
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "go.docsTool": "gogetdoc"
 }

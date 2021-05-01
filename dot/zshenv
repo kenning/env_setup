@@ -84,6 +84,9 @@ alias pg="sudo runuser -u postgres -- psql panorama"
 alias pglogin="sudo su - postgres"
 
 alias findpanorama="netstat -ltnp | grep -w \":$PANORAMA_PORT\""
+function findport () {
+  netstat -ltnp | grep -w ":$1"
+}
 
 # ---------------------------------------------------------------------
 # Shit copy and pasted off the internet that i don't really understand
@@ -132,6 +135,13 @@ export PATH="$PATH:/home/nick/go/bin"
 export PATH="$PATH:/home/nick/Documents/ol/compass/bin"
 export PATH="$PATH:/home/nick/Documents/ol/panorama/bin"
 export PATH="$PATH:$(yarn global bin)"
+export PATH="$PATH:"
+export PATH="$PATH:$pewd/scripts"
+
+alias goland="/home/nick/Documents/GoLand-2021.1.1/bin/goland.sh &"
+
+export gnome_shell_extensions_dir="/home/nick/.local/share/gnome-shell/extensions/"
+
 
 ## Python shit, very sus
 
@@ -152,6 +162,10 @@ fi
 
 # On new window, open in panorama folder
 cop
+
+# Start low memory message script
+
+solo -port=8987 ubuntu-low-mem-popup.sh &
 
 # Linux-y todos
 echo "\n\033[;34m  TODO:\n\
