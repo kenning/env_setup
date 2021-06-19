@@ -45,9 +45,10 @@ export pewd="$HOME/Documents/env_setup"
 
 ## Outerlabs
 export o1wd="$HOME/Documents/ol/onewbs"
-export ocwd="$HOME/Documents/ol/compass"
+export olwd="$HOME/Documents/ol/clay"
 export opwd="$HOME/Documents/ol/panorama"
 export onwd="$HOME/Documents/ol/notes"
+export otwd="$HOME/Documents/ol/template"
 
 ## Matt app
 export mawd="$HOME/Documents/mattapp"
@@ -61,7 +62,8 @@ alias ccc="cd $ccwd"
 alias cpt="cd $ptwd"
 alias cpe="cd $pewd"
 alias co1="cd $o1wd"
-alias coc="cd $ocwd"
+alias cot="cd $otwd"
+alias col="cd $olwd"
 alias cop="cd $opwd"
 alias con="cd $onwd"
 alias cma="cd $mawd"
@@ -71,9 +73,14 @@ alias cma="cd $mawd"
 
 ## Outerlabs
 
+export GOPRIVATE="gitlab.com/outerlabs"
+alias notes="subl"
+alias notes2="subl $o1wd"
+
 export ONEWBS_WORKING_DIR="$HOME/Documents/ol/onewbs"
 
 alias onewbs="tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-database-emulator\" && tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-api\" && tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-frontend\" && tmux rotate-window && tmux select-layout even-vertical && clear"
+alias pano="tmux split-window 'cd $opwd && make frontend' && tmux split-window 'cd $opwd && make api'"
 
 alias kill-java="killall -9 java"
 
@@ -87,6 +94,13 @@ alias findpanorama="netstat -ltnp | grep -w \":$PANORAMA_PORT\""
 function findport () {
   netstat -ltnp | grep -w ":$1"
 }
+
+### Panorama
+export PROD_DB_INSTANCE=panorama-02072020:us-west2:panorama-prod
+export PROD_DB_PORT_MAP=5434
+
+export STAGING_DB_INSTANCE=panorama-02072020:us-west2:panorama-staging-standard
+export STAGING_DB_PORT_MAP=5436
 
 # ---------------------------------------------------------------------
 # Shit copy and pasted off the internet that i don't really understand
@@ -160,9 +174,6 @@ if $START_WITH_TMUX; then
   fi
 fi
 
-# On new window, open in panorama folder
-cop
-
 # Start low memory message script
 
 solo -port=8987 ubuntu-low-mem-popup.sh &
@@ -171,4 +182,7 @@ solo -port=8987 ubuntu-low-mem-popup.sh &
 echo "\n\033[;34m  TODO:\n\
   - ctrl+a then ? to get some ideas about tmux commands like rename-window\
 \033[0m"
+
+# On new window, open in panorama folder
+cop
 

@@ -2,9 +2,12 @@
   "editor.selectionClipboard": false,
   "eslint.validate": ["typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    // "source.fixAll": true
   },
   "editor.tabSize": 2,
+  "[markdown]": {
+    "editor.tabSize": 8
+  },
   "editor.rulers": [80, 100],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -44,7 +47,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "window.autoDetectHighContrast": false,
-  "go.lintOnSave": "file",
+  "go.lintOnSave": "workspace",
+  "go.lintTool": "golangci-lint",
   "go.formatTool": "gofmt",
   "go.useLanguageServer": true,
   "[go]": {
@@ -53,5 +57,26 @@
       "source.organizeImports": true
     }
   },
-  "go.docsTool": "gogetdoc"
+  "go.docsTool": "gogetdoc",
+  "javascript.suggest.completeJSDocs": false,
+  "editor.autoClosingOvertype": "never",
+  "editor.autoClosingDelete": "never",
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
+  "typescript.autoClosingTags": false,
+  "javascript.autoClosingTags": false,
+  "workbench.colorTheme": "Eva Dark Bold",
+  "files.associations": {
+    "*.go": "go"
+  },
+  "go.lintFlags": ["--timeout 5m", " --disable=typecheck", "--sort-results "],
+  "files.exclude": {
+    "web/build": true
+  },
+  "editor.quickSuggestions": {
+    "text": false,
+    "snippet": false,
+    "comments": false,
+    "strings": false
+  }
 }

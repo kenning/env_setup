@@ -24,6 +24,10 @@ cp $HOME/.tmux.conf ./dot/tmux.conf
 # gitignore
 cp $HOME/.tmux.conf ./dot/tmux.conf
 
+# sublime
+cp $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings ./dot/Preferences.sublime-settings
+cp $HOME/.config/sublime-text-3/Packages/User/Default\ \(Linux\).sublime-keymap ./dot/Default\ \(Linux\).sublime-keymap
+
 printf "";
 printf "\033[4;33mSuccess\033[0m\n"
 printf "";
