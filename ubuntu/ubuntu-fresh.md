@@ -148,3 +148,9 @@ gnome-extensions pack gTile@me
 gnome-extensions install gTile@me.shell-extension.zip
 # alt+f2 to bring up window, then type "r"
 
+# install nohang
+sudo add-apt-repository ppa:oibaf/test
+sudo apt update
+sudo apt install nohang
+sudo systemctl enable --now nohang-desktop.service
+
