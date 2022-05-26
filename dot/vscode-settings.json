@@ -6,7 +6,8 @@
   },
   "editor.tabSize": 2,
   "[markdown]": {
-    "editor.tabSize": 8
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
   },
   "editor.rulers": [80, 100],
   "[typescriptreact]": {
@@ -65,9 +66,9 @@
   "editor.autoClosingQuotes": "never",
   "typescript.autoClosingTags": false,
   "javascript.autoClosingTags": false,
-  "workbench.colorTheme": "Eva Dark Bold",
   "files.associations": {
-    "*.go": "go"
+    "*.go": "go",
+    "*.mdx": "markdown"
   },
   "go.lintFlags": ["--timeout 5m", " --disable=typecheck", "--sort-results "],
   "files.exclude": {
@@ -78,5 +79,12 @@
     "snippet": false,
     "comments": false,
     "strings": false
-  }
+  },
+  "files.watcherExclude": {
+    "**/.git/**": true
+  },
+  "prettier.prettierPath": "prettier@^2.0.2",
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.colorTheme": "Darcula",
+  "go.toolsManagement.checkForUpdates": "off"
 }

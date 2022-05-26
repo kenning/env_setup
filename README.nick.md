@@ -147,3 +147,20 @@ ffmpeg -y -i file.mp4 -i palette.png -filter_complex paletteuse -r 10 -s 320x480
 > but then i installed and used gifsicle instead...
 > https://superuser.com/questions/1107200/optimize-animated-gif-size-in-command-line
 
+--------------------------------------------------------------------------------
+
+## google cloud
+
+make sure to export GOOGLE_APPLICATION_CREDENTIALS. I have this:
+
+`GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/keys/onewbs-staging-appengine.json`
+
+for onewbs. Theres one inside the blueprint folder too.
+
+--------------------------------------------------------------------------------
+
+## golang + k8s dev
+
+k8s requires golang 1.18.1 but OL uses 1.16. 
+
+Not sure how to do this. I gave up.

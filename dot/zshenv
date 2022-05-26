@@ -15,10 +15,6 @@ source ~/.secret
 
 alias zsrc="source ~/.zshenv"
 
-## Readme's
-alias tt="less ~/README.nick.md"
-alias githelp="less ~/.oh-my-zsh/plugins/git/README.md"
-
 ## Funny 
 alias please="sudo"
 alias pls="sudo"
@@ -28,6 +24,17 @@ alias gcpp="git checkout preproduction"
 
 ## Copy to clipboard
 alias copy="xsel -b"
+
+## youtube-dl for albums
+alias yt="youtube-dl -x --add-metadata --audio-format \"mp3\""
+alias ytp="yt --yes-playlist"
+
+# ---------------------------------------------------------------------
+# Golang
+
+# This isnt used in go version > 1.8, but OL uses 1.6.
+GOPATH=$HOME/go
+export GOPATH
 
 # ---------------------------------------------------------------------
 # Handmade bashmarks
@@ -41,12 +48,22 @@ export ccwd="$HOME/Documents/alecco/card-editor/"
 
 ## Personal
 export ptwd="$HOME/Documents/test-space"
+export pkwd="$GOPATH/src/github.com/udacity/ud615/app"
 export pewd="$HOME/Documents/env_setup"
+export pfwd="$HOME/Documents/facemesh"
+export pgwd="$HOME/Documents/golang-scratchpad"
+export pnwd="$HOME/Documents/news"
 
 ## Outerlabs
 export o1wd="$HOME/Documents/ol/onewbs"
+export obwd="$HOME/Documents/ol/blueprint"
+export ofwd="$HOME/Documents/ol/flags-and-friends"
+export ohwd="$HOME/Documents/ol/helpguide"
 export olwd="$HOME/Documents/ol/clay"
 export opwd="$HOME/Documents/ol/panorama"
+export orwd="$HOME/Documents/ol/portfolio"
+export oewd="$HOME/Documents/ol/engineering"
+export ouiwd="$HOME/Documents/ol/ol-ui"
 export onwd="$HOME/Documents/ol/notes"
 export otwd="$HOME/Documents/ol/template"
 
@@ -61,10 +78,21 @@ alias cce="cd $cewd"
 alias ccc="cd $ccwd"
 alias cpt="cd $ptwd"
 alias cpe="cd $pewd"
+alias cpf="cd $pfwd"
+alias cpg="cd $pgwd"
+alias cpk="cd $pkwd"
+alias pizzakitchen="cd $pkwd"
+alias cpn="cd $pnwd"
 alias co1="cd $o1wd"
+alias cob="cd $obwd"
 alias cot="cd $otwd"
+alias coh="cd $ohwd"
+alias cof="cd $ofwd"
 alias col="cd $olwd"
 alias cop="cd $opwd"
+alias coui="cd $ouiwd"
+alias cor="cd $orwd"
+alias coe="cd $oewd"
 alias con="cd $onwd"
 alias cma="cd $mawd"
 
@@ -76,11 +104,16 @@ alias cma="cd $mawd"
 export GOPRIVATE="gitlab.com/outerlabs"
 alias notes="subl"
 alias notes2="subl $o1wd"
+# Have to disable this to run portfolio :facepalm:
+export GOOGLE_APPLICATION_CREDENTIALS="$obwd/datastore-key.json"
 
 export ONEWBS_WORKING_DIR="$HOME/Documents/ol/onewbs"
+export REACT_APP_GOOGLE_MAPS_API_KEY=AIzaSyCHdrSPW1yawPN6VzOTvAZekg86sOjAJxs
 
 alias onewbs="tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-database-emulator\" && tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-api\" && tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-frontend\" && tmux rotate-window && tmux select-layout even-vertical && clear"
 alias pano="tmux split-window 'cd $opwd && make frontend' && tmux split-window 'cd $opwd && make api'"
+alias cl="tmux split-window 'cd $olwd && make frontend' && tmux split-window 'cd $olwd && make api' && tmux split-window 'cd $olwd && make functions'"  
+alias annoying="make web-lint && make web-fmt"
 
 alias kill-java="killall -9 java"
 
@@ -101,6 +134,15 @@ export PROD_DB_PORT_MAP=5434
 
 export STAGING_DB_INSTANCE=panorama-02072020:us-west2:panorama-staging-standard
 export STAGING_DB_PORT_MAP=5436
+
+### Onewbs
+
+alias onewbs_staging_ingest="export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/keys/onewbs-staging.json && make ingest-staging"
+alias onewbs_prod_ingest="export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/keys/onewbs-prod.json && make ingest-production"
+alias oopswbs="gc -a --amend && gpoh --no-verify -f"
+
+### Blueprint
+alias blueprint_gcp_creds="export GOOGLE_APPLICATION_CREDENTIALS=$obwd/datastore-key.json"
 
 # ---------------------------------------------------------------------
 # Shit copy and pasted off the internet that i don't really understand
@@ -152,12 +194,19 @@ export PATH="$PATH:$(yarn global bin)"
 export PATH="$PATH:"
 export PATH="$PATH:$pewd/scripts"
 
+## ??
 alias goland="/home/nick/Documents/GoLand-2021.1.1/bin/goland.sh &"
 
 export gnome_shell_extensions_dir="/home/nick/.local/share/gnome-shell/extensions/"
 
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
-## Python shit, very sus
+# ---------------------------------------------------------------------
+# More of my shit
+
+## Personal Readme's
+alias tt="less $pewd/README.nick.md"
+alias githelp="less ~/.oh-my-zsh/plugins/git/README.md"
 
 export CLOUDSDK_PYTHON=$(which python)
 
@@ -174,15 +223,6 @@ if $START_WITH_TMUX; then
   fi
 fi
 
-# Start low memory message script
-
-solo -port=8987 ubuntu-low-mem-popup.sh &
-
-# Linux-y todos
-echo "\n\033[;34m  TODO:\n\
-  - ctrl+a then ? to get some ideas about tmux commands like rename-window\
-\033[0m"
-
-# On new window, open in panorama folder
-cop
+# On new window, open in clay folder
+co1
 
