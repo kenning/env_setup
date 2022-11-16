@@ -1,6 +1,5 @@
 {
   "editor.selectionClipboard": false,
-  "eslint.validate": ["typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
     // "source.fixAll": true
   },
@@ -14,14 +13,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "keyboard.dispatch": "keyCode",
-  "eslint.workingDirectories": [
-    {
-      "directory": "web",
-      "changeProcessCWD": true
-    }
-  ],
-  "eslint.packageManager": "yarn",
-  "eslint.run": "onType",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -72,7 +63,8 @@
   },
   "go.lintFlags": ["--timeout 5m", " --disable=typecheck", "--sort-results "],
   "files.exclude": {
-    "web/build": true
+    "web/build": true,
+    "web/node_modules": true
   },
   "editor.quickSuggestions": {
     "text": false,
@@ -85,6 +77,9 @@
   },
   "prettier.prettierPath": "prettier@^2.0.2",
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.colorTheme": "Darcula",
-  "go.toolsManagement.checkForUpdates": "off"
+  "workbench.colorTheme": "Gruvbox Dark Soft",
+  "go.toolsManagement.checkForUpdates": "off",
+  "eslint.alwaysShowStatus": true,
+  "eslint.lintTask.options": "",
+  "window.zoomLevel": -1
 }

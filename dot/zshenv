@@ -1,4 +1,8 @@
-START_WITH_TMUX=true
+if [ "x${VSCODE}" = "xYES" ]; then
+  START_WITH_TMUX=false
+else 
+  START_WITH_TMUX=true
+fi
 
 # Aliases at the end of .zshrc instead of here:
 # alias gb="git branch | cat"
@@ -26,8 +30,8 @@ alias gcpp="git checkout preproduction"
 alias copy="xsel -b"
 
 ## youtube-dl for albums
-alias yt="youtube-dl -x --add-metadata --audio-format \"mp3\""
-alias ytp="yt --yes-playlist"
+alias yt="youtube-dl -x --add-metadata --audio-format \"mp3\" "
+alias ytp="yt --yes-playlist -o '%(playlist_index)s-%(title)s.%(ext)s'"
 
 # ---------------------------------------------------------------------
 # Golang
@@ -47,7 +51,7 @@ export cewd="$HOME/Documents/alecco/event-creator/"
 export ccwd="$HOME/Documents/alecco/card-editor/"
 
 ## Personal
-export ptwd="$HOME/Documents/test-space"
+export ptwd="$HOME/Documents/texttospeech"
 export pkwd="$GOPATH/src/github.com/udacity/ud615/app"
 export pewd="$HOME/Documents/env_setup"
 export pfwd="$HOME/Documents/facemesh"
@@ -108,15 +112,25 @@ alias notes2="subl $o1wd"
 export GOOGLE_APPLICATION_CREDENTIALS="$obwd/datastore-key.json"
 
 export ONEWBS_WORKING_DIR="$HOME/Documents/ol/onewbs"
+export BP_WORKING_DIR="$HOME/Documents/ol/blueprint"
 export REACT_APP_GOOGLE_MAPS_API_KEY=AIzaSyCHdrSPW1yawPN6VzOTvAZekg86sOjAJxs
 
 alias onewbs="tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-database-emulator\" && tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-api\" && tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-frontend\" && tmux rotate-window && tmux select-layout even-vertical && clear"
+
 alias pano="tmux split-window 'cd $opwd && make frontend' && tmux split-window 'cd $opwd && make api'"
+
 alias cl="tmux split-window 'cd $olwd && make frontend' && tmux split-window 'cd $olwd && make api' && tmux split-window 'cd $olwd && make functions'"  
+
+alias bp="tmux split-window \"cd $BP_WORKING_DIR && make frontend-no-restrictions\" && tmux split-window \"cd $BP_WORKING_DIR && make api\" && tmux rotate-window && tmux select-layout even-vertical && clear"
+
+alias pofo="cd $orwd && tmux split-window \"cd $orwd && make ui\" && tmux split-window \"cd $orwd && make api-no-credentials\" && tmux split-window \"cd $orwd \" && tmux rotate-window && tmux select-layout even-vertical && clear"
+
 alias annoying="make web-lint && make web-fmt"
 
+# kills onewbs database. also kills elasticsearch(??) but that restarts(??)
 alias kill-java="killall -9 java"
 
+# More panorama configuration?
 PANORAMA_PORT=5331
 export API_HOST="http://localhost:$PANORAMA_PORT"
 
@@ -223,6 +237,6 @@ if $START_WITH_TMUX; then
   fi
 fi
 
-# On new window, open in clay folder
-co1
+# On new window, open in current 'main project' folder
+cor
 
