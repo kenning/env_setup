@@ -13,9 +13,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "keyboard.dispatch": "keyCode",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "editor.formatOnSave": true,
   "emmet.showExpandedAbbreviation": "never",
   "editor.suggest.showSnippets": false,
@@ -37,6 +34,14 @@
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.indentSize": 4,
+    "editor.formatOnType": true
   },
   "window.autoDetectHighContrast": false,
   "go.lintOnSave": "workspace",
@@ -77,7 +82,7 @@
   },
   "prettier.prettierPath": "prettier@^2.0.2",
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.colorTheme": "Gruvbox Dark Soft",
+  "workbench.colorTheme": "Gruvbox Light Soft",
   "go.toolsManagement.checkForUpdates": "off",
   "eslint.alwaysShowStatus": true,
   "eslint.lintTask.options": "",

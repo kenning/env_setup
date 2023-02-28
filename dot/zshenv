@@ -57,6 +57,7 @@ export pewd="$HOME/Documents/env_setup"
 export pfwd="$HOME/Documents/facemesh"
 export pgwd="$HOME/Documents/golang-scratchpad"
 export pnwd="$HOME/Documents/news"
+export pmwd="$HOME/Documents/ml"
 
 ## Outerlabs
 export o1wd="$HOME/Documents/ol/onewbs"
@@ -87,6 +88,7 @@ alias cpg="cd $pgwd"
 alias cpk="cd $pkwd"
 alias pizzakitchen="cd $pkwd"
 alias cpn="cd $pnwd"
+alias cpm="cd $pmwd"
 alias co1="cd $o1wd"
 alias cob="cd $obwd"
 alias cot="cd $otwd"
@@ -109,7 +111,9 @@ export GOPRIVATE="gitlab.com/outerlabs"
 alias notes="subl"
 alias notes2="subl $o1wd"
 # Have to disable this to run portfolio :facepalm:
-export GOOGLE_APPLICATION_CREDENTIALS="$obwd/datastore-key.json"
+# export GOOGLE_APPLICATION_CREDENTIALS="$obwd/datastore-key.json"
+export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/keys/onewbs-staging.json
+
 
 export ONEWBS_WORKING_DIR="$HOME/Documents/ol/onewbs"
 export BP_WORKING_DIR="$HOME/Documents/ol/blueprint"
@@ -238,5 +242,5 @@ if $START_WITH_TMUX; then
 fi
 
 # On new window, open in current 'main project' folder
-cor
+co1
 
