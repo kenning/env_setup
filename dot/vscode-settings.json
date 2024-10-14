@@ -8,7 +8,7 @@
     "editor.insertSpaces": false,
     "editor.tabSize": 4
   },
-  "editor.rulers": [80, 100],
+  "editor.rulers": [100],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -41,7 +41,8 @@
   "[python]": {
     "editor.tabSize": 4,
     "editor.indentSize": 4,
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "window.autoDetectHighContrast": false,
   "go.lintOnSave": "workspace",
@@ -51,7 +52,7 @@
   "[go]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "explicit"
     }
   },
   "go.docsTool": "gogetdoc",
@@ -80,11 +81,30 @@
   "files.watcherExclude": {
     "**/.git/**": true
   },
-  "prettier.prettierPath": "prettier@^2.0.2",
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.colorTheme": "Gruvbox Light Soft",
   "go.toolsManagement.checkForUpdates": "off",
   "eslint.alwaysShowStatus": true,
   "eslint.lintTask.options": "",
-  "window.zoomLevel": -1
+  "terminal.integrated.inheritEnv": false,
+  "editor.defaultFormatter": "ms-dotnettools.csharp",
+  "[csharp]": {
+    "editor.defaultFormatter": "csharpier.csharpier-vscode"
+  },
+  "godot_tools.reconnect_attempts": 3,
+  "godot_tools.reconnect_cooldown": 2000,
+  "godot.csharp.executablePath": "",
+  "godot_tools.editor_path": "/home/nick/godot_stuff/Godot_v4.0.2-stable_linux.x86_64",
+  "godot_tools.gdscript_lsp_server_port": 6005,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "prettier.ignorePath": "",
+  "python.defaultInterpreterPath": "/home/nick/anaconda3/envs/kingdom",
+  "window.zoomLevel": -1,
+  "workbench.editor.empty.hint": "hidden",
+  "remote.SSH.defaultExtensions": ["ms-toolsai.jupyter", "ms-python.python"],
+  "explorer.confirmDragAndDrop": false
 }

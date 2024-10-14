@@ -1,6 +1,10 @@
 # env_setup
 How to set up my dev environment
 
+## Ubuntu
+
+In here go to ./ubuntu/ubuntu-fresh.md
+
 ## windows
 
 to map caps lock to escape install keytweak or some other thing

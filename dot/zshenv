@@ -1,8 +1,9 @@
-if [ "x${VSCODE}" = "xYES" ]; then
-  START_WITH_TMUX=false
-else 
-  START_WITH_TMUX=true
-fi
+START_WITH_TMUX=false
+# if [ "x${VSCODE}" = "xYES" ]; then
+#   START_WITH_TMUX=false
+# else 
+#   START_WITH_TMUX=true
+# fi
 
 # Aliases at the end of .zshrc instead of here:
 # alias gb="git branch | cat"
@@ -30,8 +31,11 @@ alias gcpp="git checkout preproduction"
 alias copy="xsel -b"
 
 ## youtube-dl for albums
-alias yt="youtube-dl -x --add-metadata --audio-format \"mp3\" "
+alias youtube-dl="echo 'its yt-dlp now'"
+alias yt="yt-dlp -x --add-metadata --audio-format \"mp3\" "
 alias ytp="yt --yes-playlist -o '%(playlist_index)s-%(title)s.%(ext)s'"
+alias yt-480="yt-dlp -f 'bestvideo[height=480]+bestaudio' "
+alias yt-360="yt-dlp -f 'bestvideo[height=360]+bestaudio' "
 
 # ---------------------------------------------------------------------
 # Golang
@@ -41,16 +45,13 @@ GOPATH=$HOME/go
 export GOPATH
 
 # ---------------------------------------------------------------------
+# Java/spark?
+export SPARK_HOME='/home/nick/applications/spark'
+
+# ---------------------------------------------------------------------
 # Handmade bashmarks
 
-## Collective
-export cwwd="$HOME/Documents/card-editor"
-export clwd="$HOME/Documents/library/website"
-export cawd="$HOME/Documents/alecco/aurocracy/"
-export cewd="$HOME/Documents/alecco/event-creator/"
-export ccwd="$HOME/Documents/alecco/card-editor/"
-
-## Personal
+### Personal
 export ptwd="$HOME/Documents/texttospeech"
 export pkwd="$GOPATH/src/github.com/udacity/ud615/app"
 export pewd="$HOME/Documents/env_setup"
@@ -58,29 +59,16 @@ export pfwd="$HOME/Documents/facemesh"
 export pgwd="$HOME/Documents/golang-scratchpad"
 export pnwd="$HOME/Documents/news"
 export pmwd="$HOME/Documents/ml"
+export pbwd="$HOME/Documents/babynames"
+export pcwd="$HOME/Documents/CoinedUp"
 
-## Outerlabs
-export o1wd="$HOME/Documents/ol/onewbs"
-export obwd="$HOME/Documents/ol/blueprint"
-export ofwd="$HOME/Documents/ol/flags-and-friends"
-export ohwd="$HOME/Documents/ol/helpguide"
-export olwd="$HOME/Documents/ol/clay"
-export opwd="$HOME/Documents/ol/panorama"
-export orwd="$HOME/Documents/ol/portfolio"
-export oewd="$HOME/Documents/ol/engineering"
-export ouiwd="$HOME/Documents/ol/ol-ui"
-export onwd="$HOME/Documents/ol/notes"
-export otwd="$HOME/Documents/ol/template"
-
-## Matt app
-export mawd="$HOME/Documents/mattapp"
+### Grad work
+export grwd="$HOME/Documents/r"
+export gvwd="$HOME/Documents/vuw"
 
 ## Implement shortcuts
-alias ccw="cd $cwwd"
-alias ccl="cd $clwd"
-alias cca="cd $cawd"
-alias cce="cd $cewd"
-alias ccc="cd $ccwd"
+
+### personal
 alias cpt="cd $ptwd"
 alias cpe="cd $pewd"
 alias cpf="cd $pfwd"
@@ -89,86 +77,31 @@ alias cpk="cd $pkwd"
 alias pizzakitchen="cd $pkwd"
 alias cpn="cd $pnwd"
 alias cpm="cd $pmwd"
-alias co1="cd $o1wd"
-alias cob="cd $obwd"
-alias cot="cd $otwd"
-alias coh="cd $ohwd"
-alias cof="cd $ofwd"
-alias col="cd $olwd"
-alias cop="cd $opwd"
-alias coui="cd $ouiwd"
-alias cor="cd $orwd"
-alias coe="cd $oewd"
-alias con="cd $onwd"
-alias cma="cd $mawd"
+alias cpb="cd $pbwd"
+alias cpc="cd $pcwd"
+
+### grad work
+alias cgr="cd $grwd"
+alias cgv="cd $gvwd"
 
 # ---------------------------------------------------------------------
 # Work
 
-## Outerlabs
+alias pg="sudo runuser -u postgres -- psql"
+# alias pglogin="sudo su - postgres"
 
-export GOPRIVATE="gitlab.com/outerlabs"
-alias notes="subl"
-alias notes2="subl $o1wd"
-# Have to disable this to run portfolio :facepalm:
-# export GOOGLE_APPLICATION_CREDENTIALS="$obwd/datastore-key.json"
-export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/keys/onewbs-staging.json
+# Fly.io
+export FLYCTL_INSTALL="/home/nick/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 
-export ONEWBS_WORKING_DIR="$HOME/Documents/ol/onewbs"
-export BP_WORKING_DIR="$HOME/Documents/ol/blueprint"
-export REACT_APP_GOOGLE_MAPS_API_KEY=AIzaSyCHdrSPW1yawPN6VzOTvAZekg86sOjAJxs
+# ---------------------------------------------------------------------
+# Grad program
 
-alias onewbs="tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-database-emulator\" && tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-api\" && tmux split-window \"cd $ONEWBS_WORKING_DIR && make start-frontend\" && tmux rotate-window && tmux select-layout even-vertical && clear"
-
-alias pano="tmux split-window 'cd $opwd && make frontend' && tmux split-window 'cd $opwd && make api'"
-
-alias cl="tmux split-window 'cd $olwd && make frontend' && tmux split-window 'cd $olwd && make api' && tmux split-window 'cd $olwd && make functions'"  
-
-alias bp="tmux split-window \"cd $BP_WORKING_DIR && make frontend-no-restrictions\" && tmux split-window \"cd $BP_WORKING_DIR && make api\" && tmux rotate-window && tmux select-layout even-vertical && clear"
-
-alias pofo="cd $orwd && tmux split-window \"cd $orwd && make ui\" && tmux split-window \"cd $orwd && make api-no-credentials\" && tmux split-window \"cd $orwd \" && tmux rotate-window && tmux select-layout even-vertical && clear"
-
-alias annoying="make web-lint && make web-fmt"
-
-# kills onewbs database. also kills elasticsearch(??) but that restarts(??)
-alias kill-java="killall -9 java"
-
-# More panorama configuration?
-PANORAMA_PORT=5331
-export API_HOST="http://localhost:$PANORAMA_PORT"
-
-alias pg="sudo runuser -u postgres -- psql panorama"
-alias pglogin="sudo su - postgres"
-
-alias findpanorama="netstat -ltnp | grep -w \":$PANORAMA_PORT\""
-function findport () {
-  netstat -ltnp | grep -w ":$1"
-}
-
-### Panorama
-export PROD_DB_INSTANCE=panorama-02072020:us-west2:panorama-prod
-export PROD_DB_PORT_MAP=5434
-
-export STAGING_DB_INSTANCE=panorama-02072020:us-west2:panorama-staging-standard
-export STAGING_DB_PORT_MAP=5436
-
-### Onewbs
-
-alias onewbs_staging_ingest="export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/keys/onewbs-staging.json && make ingest-staging"
-alias onewbs_prod_ingest="export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/keys/onewbs-prod.json && make ingest-production"
-alias oopswbs="gc -a --amend && gpoh --no-verify -f"
-
-### Blueprint
-alias blueprint_gcp_creds="export GOOGLE_APPLICATION_CREDENTIALS=$obwd/datastore-key.json"
+alias RS="rstudio"
 
 # ---------------------------------------------------------------------
 # Shit copy and pasted off the internet that i don't really understand
-
-## Android simulator
-
-export ANDROID_SDK=~/Library/Android/sdk
-# export PATH=~/Library/Android/sdk/platform-tools:$PATH:/usr/local/mysql/bin/
 
 ## Nvim
 
@@ -208,8 +141,8 @@ export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:/home/nick/go/bin"
 export PATH="$PATH:/home/nick/Documents/ol/compass/bin"
 export PATH="$PATH:/home/nick/Documents/ol/panorama/bin"
-export PATH="$PATH:$(yarn global bin)"
-export PATH="$PATH:"
+# export PATH="$PATH:$(yarn global bin)"
+export PATH="$PATH:/home/nick/.dotnet"
 export PATH="$PATH:$pewd/scripts"
 
 ## ??
@@ -226,7 +159,8 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 alias tt="less $pewd/README.nick.md"
 alias githelp="less ~/.oh-my-zsh/plugins/git/README.md"
 
-export CLOUDSDK_PYTHON=$(which python)
+export CLOUDSDK_PYTHON=$(which python3)
+export GOOGLE_APPLICATION_CREDENTIALS="/home/nick/.config/gcloud/application_default_credentials.json"
 
 ### The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/nick/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nick/Documents/google-cloud-sdk/path.zsh.inc'; fi
@@ -241,6 +175,37 @@ if $START_WITH_TMUX; then
   fi
 fi
 
-# On new window, open in current 'main project' folder
-co1
+# Jupyter but open it in firefox
+alias fj='export BROWSER=/usr/bin/firefox && jupyter-lab'
+
+alias gogo='cd ~/godot_stuff/ && ./Godot_v4.0.2-stable_linux.x86_64'
+
+alias convert_flac_to_mp3='find . -name "*.flac" -exec ffmpeg -i {} -ab 160k -map_metadata 0 -id3v2_version 3 {}.mp3 \;'
+
+alias condo='conda activate env39'
+
+alias condojl='conda activate env39 && jupyter-lab'
+
+alias oopswbs='gc -a --amend && gpoh -f'
+
+
+alias loggo='echo $RASP_PW | xsel -b'
+
+alias huggo='echo "Copying fine-grained token" && echo $HUGGINGFACE_FG | xsel -b'
+
+# alias huggo-write='echo $HUGGINGFACE_WRITE_KEY | xsel -b'
+alias huggo-write='echo "try huggo, it is the fine-grained token now"'
+
+alias kaggo='cat ~/.kaggle/kaggle.json | xsel -b'
+
+alias rasp-web='cd ~/Documents/raspberry/design-assistant/raspberry-web && pnpm install && NEXT_PUBLIC_API_HOST=http://localhost:8000 pnpm run dev'
+alias rasp-api='cd ~/Documents/raspberry/design-assistant && docker compose build design-assistant-api reference-image-service && docker compose up design-assistant-api reference-image-service'
+
+alias gcloud-80gb='gcloud compute ssh --zone "us-east5-b" "sdxl-train-a100-1x" --project "use-raspberry-primary"'
+alias gcloud-comfy='gcloud compute ssh --zone "us-central1-b" "nick-comfy-2" --project "use-raspberry-primary"'
+
+export KERAS_BACKEND="torch"
+
+## Open in documents
+cd /home/nick/Documents/
 

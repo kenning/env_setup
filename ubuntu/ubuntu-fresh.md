@@ -1,3 +1,8 @@
+# View this file as raw -- its like a history file
+
+rest is commented out.
+
+<!--
 sudo su
 apt update
 apt install zsh
