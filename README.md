@@ -5,6 +5,10 @@ How to set up my dev environment
 
 In here go to ./ubuntu/ubuntu-fresh.md
 
+Gtile settings:
+
+![a](gtile.png)
+
 ## windows
 
 to map caps lock to escape install keytweak or some other thing
