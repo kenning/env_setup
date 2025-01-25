@@ -15,106 +15,58 @@ sudo reboot
 apt install git
 apt install vim
 git 
-sh -c "$(wget https:#raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 cd Documents
-git clone https:#github.com/kenning/env_setup.git
+git clone git@github.com:kenning/env_setup.git
 cd env_setup
 ssh-keygen -t ed25519 -C "<put some note here>"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
 apt install xsel
 # Open firefox
 # go to about:preferences#privacy and turn off the fucking password asker
 # Install lastpass, ublock origin, video speed controller
 # Log into lastpass
 # Log into github
-# Go to https:#github.com/settings/keys
+# Go to https://github.com/settings/keys
 cat ~/.ssh/id_ed25519.pub| xsel -b
 # Paste new key into github
-cp -r ubuntu/{.,}* ~
 
-`git clone https:#github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim\n\n
-# run vim and type :PluginInstall
-
-# install nvm for node
-curl https:#raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 # Source zsh nvm commands
 zsrc
-# Outerlabs node version
-nvm install 12.19.0
 
-# Install tmux
-sudo apt install tmux
 # Slack
 sudo snap install slack --classic
-
-# Go install
-# Go to https:#golang.org/doc/install and download go for linux
-sudo tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
 
 # Install make
 sudo apt install build-essential
 
-# Install yarn
-npm i -g yarn
-
-# vscode
-cp ubuntu/vscode-settings.json ~/.config/Code/User/settings.json
-
-#####
-## Bunch of outerlabs stuff
-#####
 git config --global user.email "hwerzog@gmail.com"
 git config --global user.name "Nick Thinkpad X1"
 git config --global core.editor vim
 
-# Docker https:#docs.docker.com/engine/install/ubuntu/
-sudo apt-get install 
-    apt-transport-https 
-    ca-certificates 
-    curl 
-    gnupg-agent 
-    software-properties-common\n
-curl -fsSL https:#download.docker.com/linux/ubuntu/gpg | sudo apt-key add -\n
-sudo add-apt-repository 
-   "deb [arch=amd64] https:#download.docker.com/linux/ubuntu 
-   $(lsb_release -cs) 
-   stable"\n
-sudo apt-get install docker-ce docker-ce-cli containerd.io\n
-sudo docker run hello-world\n
+# In settings, unset various super+alt+shift+rightarrow type commands...
+# Install gnome tweaks, turn caps to escape, 
+# Then install gTile.
+# Can do this with the browser. 
+gsettings set org.gnome.shell.keybindings shift-overview-up "[]"
+gsettings set org.gnome.shell.keybindings shift-overview-down "[]"
 
-# golangci-lint
-# binary will be $(go env GOPATH)/bin/golangci-lint\n
-curl -sSfL https:#raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.33.0\n\ngolangci-lint --version
-golangci-lint
+# Set up vogue spring theme
+( cd $ZSH_CUSTOM/plugins && git clone https://github.com/chrissicool/zsh-256color )
+cd ~/Documents
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
 
-# python
-sudo apt install python
-
-# Download and install google cloud sdk https:#cloud.google.com/sdk/docs/install
-tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz\n
-
-gio open .
-# then extract in documents folder
-./google-cloud-sdk/install.sh
-
-# ghokin
-make init
-cp ghokin_linux_amd64 /bin/ghokin
-sudo cp ghokin_linux_amd64 /usr/bin/ghokin
-sudo chmod 777 /usr/bin/ghokin
-
-# java
-sudo apt install default-jre
-
-# set gcloud project
-gcloud config set project onewbs-staging
-
-# uninstall lefthook
-rm $(which lefthook)
-
-# dl from https://github.com/Arkweid/lefthook/releases/tag/v0.7.2
-# Rename and move the file so it's in your PATH:
-mv ./lefthook_0.7.2_Linux_x86_64 /usr/local/bin/lefthook
-sudo chmod 777 /usr/local/bin/lefthook
+# Close and reopen 'terminal' application
+# In 'terminal' preferences pick the font u want. i have been using source code pro.
+# Still in preferences, go to color theme, uhh basically pick solarized light and then
+# make a couple more changes -- default color background to orange, default color text
+# to a dark grey
 
 ################################################################################
 ####### "Optional" #############################################################
@@ -142,20 +94,3 @@ apt --fix-broken install
 sudo apt --fix-broken install
 sudo dpkg -i libmutter-6-0_3.36.7+git20201123-0.20.04.1_amd64.deb
 sudo apt-mark hold libmutter-6-0:amd64
-
-# Install gnome-tweaks via snap store, then...
-# Install 'starter pack' extensions
-sudo apt install gnome-shell-extensions
-
-# Install gTile
-cpe
-gnome-extensions pack gTile@me
-gnome-extensions install gTile@me.shell-extension.zip
-# alt+f2 to bring up window, then type "r"
-
-# install nohang
-sudo add-apt-repository ppa:oibaf/test
-sudo apt update
-sudo apt install nohang
-sudo systemctl enable --now nohang-desktop.service
-
