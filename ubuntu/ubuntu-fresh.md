@@ -22,6 +22,8 @@ cd env_setup
 ssh-keygen -t ed25519 -C "<put some note here>"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
+# Add github to known hosts?
+ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
 apt install xsel
 # Open firefox
@@ -38,6 +40,9 @@ zsrc
 
 # Slack
 sudo snap install slack --classic
+
+snap install nvim --classic
+snap install chromium
 
 # Install make
 sudo apt install build-essential
@@ -62,9 +67,13 @@ cd fonts
 cd ..
 rm -rf fonts
 
+# To use a bold font in the terminal, actually have to go to gnome tweaks and find 
+# 'monospace text' (use search bar) and change it to a bold font. Do not override
+# it in terminal bc terminal forces a non-bold font!
+# I have been using source code pro.
+
 # Close and reopen 'terminal' application
-# In 'terminal' preferences pick the font u want. i have been using source code pro.
-# Still in preferences, go to color theme, uhh basically pick solarized light and then
+# In preferences, go to color theme, uhh basically pick solarized light and then
 # make a couple more changes -- default color background to orange, default color text
 # to a dark grey
 
