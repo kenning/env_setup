@@ -9,6 +9,13 @@ Gtile settings:
 
 ![a](gtile.png)
 
+May also have to do this to unset super+alt+up and super+alt+down:
+```
+# Note i hand typed these and they might have a typo or smth
+gsettings set org.gnome.shell.keybindings shift-overview-up "[]"
+gsettings set org.gnome.shell.keybindings shift-overview-down "[]"
+```
+
 ## windows
 
 to map caps lock to escape install keytweak or some other thing
