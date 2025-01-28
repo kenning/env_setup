@@ -50,6 +50,7 @@ sudo apt install build-essential
 git config --global user.email "hwerzog@gmail.com"
 git config --global user.name "Nick Thinkpad X1"
 git config --global core.editor vim
+git config --global pull.rebase false
 
 # In settings, unset various super+alt+shift+rightarrow type commands...
 # Install gnome tweaks, turn caps to escape, 
