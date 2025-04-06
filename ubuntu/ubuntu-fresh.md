@@ -79,6 +79,11 @@ rm -rf fonts
 # make a couple more changes -- default color background to orange, default color text
 # to a dark grey
 
+
+# OOM fixer?
+
+sudo apt install earlyoom
+
 ################################################################################
 ####### "Optional" #############################################################
 ################################################################################
