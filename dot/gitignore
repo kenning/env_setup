@@ -1,4 +1,5 @@
 # Nick's proprietary gitignore do not steal®™™™ 
+.vscode/
 todo.x
 
 # Compiled source #

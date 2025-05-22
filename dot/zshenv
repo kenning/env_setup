@@ -1,9 +1,8 @@
-START_WITH_TMUX=false
-# if [ "x${VSCODE}" = "xYES" ]; then
-#   START_WITH_TMUX=false
-# else 
-#   START_WITH_TMUX=true
-# fi
+xbindkeys # Run this on startup to turn off insane middle click shit
+
+DATABASE_URL="postgresql://myuser:mypassword@localhost:5432/mydatabase?schema=public"
+STAGING_DATABASE_URL=$DATABASE_URL
+
 
 # Aliases at the end of .zshrc instead of here:
 # alias gb="git branch | cat"
@@ -38,15 +37,8 @@ alias yt-480="yt-dlp -f 'bestvideo[height=480]+bestaudio' "
 alias yt-360="yt-dlp -f 'bestvideo[height=360]+bestaudio' "
 
 # ---------------------------------------------------------------------
-# Golang
-
-# This isnt used in go version > 1.8, but OL uses 1.6.
-GOPATH=$HOME/go
-export GOPATH
-
-# ---------------------------------------------------------------------
-# Java/spark?
-export SPARK_HOME='/home/nick/applications/spark'
+# Node 2025
+export PATH=/usr/local/lib/nodejs/bin:$PATH
 
 # ---------------------------------------------------------------------
 # Handmade bashmarks
@@ -168,13 +160,6 @@ if [ -f '/home/nick/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/home/ni
 ### The next line enables shell command completion for gcloud.
 if [ -f '/home/nick/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nick/Documents/google-cloud-sdk/completion.zsh.inc'; fi
 
-## Run tmux
-if $START_WITH_TMUX; then
-  if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-    exec tmux
-  fi
-fi
-
 # Jupyter but open it in firefox
 alias fj='export BROWSER=/usr/bin/firefox && jupyter-lab'
 
@@ -189,9 +174,12 @@ alias condojl='conda activate env39 && jupyter-lab'
 alias oopswbs='gc -a --amend && gpoh -f'
 
 
-alias loggo='echo $RASP_PW | xsel -b'
+alias loggo='echo $GMAIL_CIVIC_PASSWORD | xsel -b'
 
 alias huggo='echo "Copying fine-grained token" && echo $HUGGINGFACE_FG | xsel -b'
+alias panno='echo "Copying panini api key" && echo $PANINI_API_KEY | xsel -b'
+
+alias wando='echo "Copying wandb api" && echo $WANDB_PERSONAL_API_KEY | xsel -b'
 
 # alias huggo-write='echo $HUGGINGFACE_WRITE_KEY | xsel -b'
 alias huggo-write='echo "try huggo, it is the fine-grained token now"'
@@ -207,5 +195,5 @@ alias gcloud-comfy='gcloud compute ssh --zone "us-central1-b" "nick-comfy-2" --p
 export KERAS_BACKEND="torch"
 
 ## Open in documents
-cd /home/nick/Documents/
+# cd /home/nick/Documents/fiction-ml/
 

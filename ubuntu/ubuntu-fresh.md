@@ -60,6 +60,9 @@ git config --global core.excludesFile '~/.gitignore'
 gsettings set org.gnome.shell.keybindings shift-overview-up "[]"
 gsettings set org.gnome.shell.keybindings shift-overview-down "[]"
 
+# Need this for middle click thing
+sudo apt install xbindkeys xsel xdotool
+
 # Set up vogue spring theme
 ( cd $ZSH_CUSTOM/plugins && git clone https://github.com/chrissicool/zsh-256color )
 cd ~/Documents

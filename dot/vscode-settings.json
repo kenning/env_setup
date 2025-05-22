@@ -10,7 +10,7 @@
   },
   "editor.rulers": [100],
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "keyboard.dispatch": "keyCode",
   "editor.formatOnSave": true,
@@ -36,7 +36,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[python]": {
     "editor.tabSize": 4,
@@ -102,7 +102,7 @@
   },
   "git.openRepositoryInParentFolders": "never",
   "prettier.ignorePath": "",
-  "python.defaultInterpreterPath": "/home/nick/anaconda3/envs/kingdom",
+  "python.defaultInterpreterPath": "/home/nick/anaconda3",
   "window.zoomLevel": -1,
   "workbench.editor.empty.hint": "hidden",
   "remote.SSH.defaultExtensions": ["ms-toolsai.jupyter", "ms-python.python"],

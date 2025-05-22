@@ -15,21 +15,21 @@ cp $HOME/.zshenv ./dot/zshenv
 cp $HOME/.zshrc ./dot/zshrc
 
 # vim
-cp $HOME/.vimrc ./dot/vimrc
-cp $HOME/.config/nvim/init.vim ./dot/init.vim
+# cp $HOME/.vimrc ./dot/vimrc
+# cp $HOME/.config/nvim/init.vim ./dot/init.vim
 
-# tmuxconf
-cp $HOME/.tmux.conf ./dot/tmux.conf
+# # tmuxconf
+# cp $HOME/.tmux.conf ./dot/tmux.conf
 
 # gitignore
-cp $HOME/.tmux.conf ./dot/tmux.conf
+cp $HOME/.gitignore ./dot/gitignore
 
 # Middle click issue
 cp $HOME/.xbindkeysrc ./dot/xbindkeysrc 
 
 # sublime
-cp $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings ./dot/Preferences.sublime-settings
-cp $HOME/.config/sublime-text-3/Packages/User/Default\ \(Linux\).sublime-keymap ./dot/Default\ \(Linux\).sublime-keymap
+cp $HOME/.config/sublime-text/Packages/User/Preferences.sublime-settings ./dot/Preferences.sublime-settings
+cp $HOME/.config/sublime-text/Packages/User/Default\ \(Linux\).sublime-keymap ./dot/Default\ \(Linux\).sublime-keymap
 
 printf "";
 printf "\033[4;33mSuccess\033[0m\n"
