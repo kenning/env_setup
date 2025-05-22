@@ -24,6 +24,9 @@ cp $HOME/.tmux.conf ./dot/tmux.conf
 # gitignore
 cp $HOME/.tmux.conf ./dot/tmux.conf
 
+# Middle click issue
+cp $HOME/.xbindkeysrc ./dot/xbindkeysrc 
+
 # sublime
 cp $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings ./dot/Preferences.sublime-settings
 cp $HOME/.config/sublime-text-3/Packages/User/Default\ \(Linux\).sublime-keymap ./dot/Default\ \(Linux\).sublime-keymap

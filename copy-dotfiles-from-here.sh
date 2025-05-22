@@ -24,6 +24,9 @@ cp ./dot/zshrc $HOME/.zshrc
 # gitignore
 cp ./dot/gitignore $HOME/.gitignore
 
+# Middle click issue
+cp ./dot/xbindkeysrc $HOME/.xbindkeysrc
+
 # sublime
 # cp ./dot/Preferences.sublime-settings $HOME/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 # cp ./dot/Default\ \(Linux\).sublime-keymap $HOME/.config/sublime-text-3/Packages/User/Default\ \(Linux\).sublime-keymap
