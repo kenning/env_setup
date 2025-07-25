@@ -5,6 +5,16 @@ How to set up my dev environment
 
 In here go to ./ubuntu/ubuntu-fresh.md
 
+### Note: How to set up multiple git creds in one computer
+~/.ssh/config:
+```
+Host github.com
+  IdentityFile ~/.ssh/something_id_ed25519
+```
+
+In the **separate from those creds repo**:
+`git config --local core.sshcommand 'ssh -i ~/.ssh/id_ed25519 -F /dev/null'`
+
 Gtile settings:
 
 ![a](gtile.png)
